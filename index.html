@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Módulo 1 - Trabalho Prático - João Lira</title>
+</head>
+<body>
+    <div class="handlerDiv">
+        <span class="label">(R) Vermelho:</span>
+        <input type="range" value="0" min="0" max="255" name="red" id="red" class="handlerInput" onchange="changeColorValue(event, 'red')" />
+        <input type="text" value="0" disabled name="redText" id="redText" class="inputText" />
+    </div>
+    <div class="handlerDiv">
+        <span class="label">(G) Verde:</span>
+        <input type="range" value="0" min="0" max="255" name="green" id="green" class="handlerInput" onchange="changeColorValue(event, 'green')" />
+        <input type="text" value="0" disabled name="greenText" id="greenText" class="inputText" />
+    </div>
+    <div class="handlerDiv">
+        <span class="label">(B) Azul:</span>
+        <input type="range" value="0" min="0" max="255" name="blue" id="blue" class="handlerInput" onchange="changeColorValue(event, 'blue')" />
+        <input type="text" value="0" disabled name="blueText" id="blueText" class="inputText" />
+    </div>
+    <div class="buttonDiv">
+        <button onclick="resetColors()">Limpar</button>
+    </div>
+    <div class="coloredBox">
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
