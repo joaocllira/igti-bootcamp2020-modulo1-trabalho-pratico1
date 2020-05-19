@@ -1,27 +1,27 @@
-function changeColorValue(event, color) {
-    let value = event.target.value;
+window.addEventListener('load', start);
 
-    document.querySelector(`#${color}Text`).value = value;
-
-    changeSquareColor();
+function start() {
+    document.querySelectorAll('.handlerInput').forEach(input => {
+        input.addEventListener(
+            'mousemove',
+            (event) => {
+                document.querySelector(`#${input.id}Text`).value = event.target.value;
+                changeSquareColor(event, input.id);
+            },
+            false
+        );
+        console.log(input);
+    });
 }
 
 function changeSquareColor() {
-    let red = document.querySelector('#redText').value;
-    let green = document.querySelector('#greenText').value;
-    let blue = document.querySelector('#blueText').value;
-
+    let [red, green, blue] = Array.from(document.querySelectorAll('.handlerInput')).map(color => color.value);
     document.querySelector('.coloredBox').style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 }
 
 function resetColors() {
-    document.querySelector('#red').value = 0;
-    document.querySelector('#green').value = 0;
-    document.querySelector('#blue').value = 0;
-
-    document.querySelector('#redText').value = 0;
-    document.querySelector('#greenText').value = 0;
-    document.querySelector('#blueText').value = 0;
-
+    document.querySelectorAll('.handlerInput').forEach(input => input.value = 0);
+    document.querySelectorAll('.inputText').forEach(text => text.value = 0);
+    
     changeSquareColor();
 }
