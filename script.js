@@ -6,7 +6,7 @@ function start() {
             'mousemove',
             (event) => {
                 document.querySelector(`#${input.id}Text`).value = event.target.value;
-                changeSquareColor(event, input.id);
+                changeSquareColor();
             },
             false
         );
